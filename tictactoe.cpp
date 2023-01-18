@@ -3,14 +3,14 @@
 
 using namespace std;
 
-int alExists(char **a,int x, int y){
+int alExists(char (*a)[3],int x, int y){
     if(*(*(a+x)+y)!= '*'){
     //if(a[x][y]!= "*"){
         return 0;
     }
     return 1;
 }
-bool tieCheck(char **a){
+bool tieCheck(char (*a)[3]){
     for(int row = 0; row<3; row++){
         for(int col = 0; col<3; col++){
             if(a[row][col] == '*'){
@@ -20,7 +20,7 @@ bool tieCheck(char **a){
     }
     return true;
 }
-char victoryCheck(char **a){
+char victoryCheck(char (*a)[3]){
     int row = 0; 
     int col = 0;
     for(row = 0; row<3; row++){
@@ -44,7 +44,7 @@ int arr[5] = { 1, 2, 3, 4, 5 };
 int *ptr = arr;
 */
 //  1 denotes empty, 2 denotes x, 3 denotes o
-void displayContents(char **a){
+void displayContents(char (*a)[3]){
     for(int i = 0; i < 3; i ++){   //row label
         cout<< '\t' <<i;
     }
@@ -52,7 +52,7 @@ void displayContents(char **a){
         cout<< j << '\t' << a[j][0]<< a[j][1]<< a[j][2];
     }
 }
-void place(char **a, int player){ //input looks like < a1  c2  b3 >
+void place(char (*a)[3], int player){ //input looks like < 1   \n    2 >
     int row;
     int col;
     cout<<"Enter Row Number: ";
@@ -63,8 +63,12 @@ void place(char **a, int player){ //input looks like < a1  c2  b3 >
 }
 int main()
 {
-   char **board;
-   board[3][3] = {{'*','*','*'},{'*','*','*'},{'*','*','*'}};
+   const int row = 3;
+   const int col = 3;
+   char (*board)[col] = new char[row][col];
+   
+   //char **board;
+   //board[3][3] = {{'*','*','*'},{'*','*','*'},{'*','*','*'}};
    int id = 0; //player that won identify
    //declare stuff
    
