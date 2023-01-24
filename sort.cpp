@@ -29,6 +29,9 @@ int main(int argc, char *argv[])
     else if (argv[3] == "s"){
         selectionsort(colors, order);
     }
+    for(int i = 0; i<colors.size(); i++){
+        cout<<colors[i]<<endl;
+    }
     return 0;
 }
 
