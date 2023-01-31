@@ -7,8 +7,8 @@
 
 using namespace std;
 
-int binarysearch(vector<string> col, string str);
-int linearsearch(vector<string> col, string str);
+int binarysearch(vector<string> &col, string str);
+int linearsearch(vector<string> &col, string str);
 
 int main(int argc, char *argv[])
 {
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-int binarysearch(vector<string> col ,string str){
+int binarysearch(vector<string> &col ,string str){
     int first = 0; 
     int last = col.size()-1;
     int middle=(first+last)/2;
@@ -62,7 +62,7 @@ int binarysearch(vector<string> col ,string str){
     }
     return pos;
 }
-int linearsearch(vector<string> col ,string str){
+int linearsearch(vector<string> &col ,string str){
     int pos = -1;
     bool found = false;
     int index = 0; 
@@ -75,3 +75,25 @@ int linearsearch(vector<string> col ,string str){
     }
     return pos;
 }
+
+/*
+fstream file(filename, ios::in);
+string line; 
+while(getline(file,line)){
+    lines.push_back(line);
+    }
+    file.close();
+}
+*/
+
+/*
+int main(int argc, char **argv){
+    string filename = argv[1];
+    string noodle = argv[2];
+    string algorythm = argv[3];
+
+    vector <string> lines;
+    readlines(filename, lines);
+    
+}
+*/

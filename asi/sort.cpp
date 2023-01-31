@@ -7,8 +7,8 @@
 
 using namespace std;
 
-int bubblesort(vector<string> col, string str);
-int selectionsort(vector<string> col, string str);
+int bubblesort(vector<string> &col, string str);
+int selectionsort(vector<string> &col, string str);
 
 int main(int argc, char *argv[])
 {
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
-int bubblesort(vector<string> col ,string str){
+int bubblesort(vector<string> &col ,string str){
     bool swapflag;
     do{
         swapflag = false;
@@ -58,7 +58,7 @@ int bubblesort(vector<string> col ,string str){
         }
     }while(swapflag);
 }
-int selectionsort(vector<string> col ,string str){
+int selectionsort(vector<string> &col ,string str){
     string minimum;
     int holdidx;
     for(int i = 1; i < col.size()-1; i++){
