@@ -6,22 +6,28 @@ void rotate(int *po, int size);
 
 int main(){
     //int elements[4] = {1,2,3,4};
+    cout<<"test 1"<<endl;
     int size = 4;
     int elements[4] = {1,2,3,4};
+    cout<<"test 2"<<endl;
     int *ptr = elements;
-    return 0;
+    
+    cout<<"test 3"<<endl;
     rotate(ptr, size);
-    for(int x = 0; x<size; x++){
-        cout<<*(ptr+x)<<endl;
+    cout<<"test 4"<<endl;
+
+    for(int x = 1; x<size; x++){
+        cout<< *(ptr+x) <<endl;
     }
+    return 0;
 }
 
 void rotate(int *po, int size){
-    int temp = *(po+size); 
+    int temp; 
     for(int i = 1; i < size; i++){
         *(po+i) = *(po + i-1);
     }
-    *po = temp;
+    *(po+0) = temp;
 }
 
 /*
